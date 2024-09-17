@@ -1,10 +1,10 @@
-#Fault injection attack on CSIDH
+# Fault injection attack on CSIDH
 
 This codebase implements a real-then-dummy and dynamic random vector CSIDH, and provide the fault injection python scripts, including extract optimal fault injection parameters, and recover CSIDH private key.
 
 This repository is the source code for the paper ``Practical Fault Injection Attacks on Constant Time CSIDH and Mitigation Techniques" Tinghung Chiu, Jason LeGrow, and  Wenjie Xiong, ASHES 2024.
 
-##Background
+## Background
 
 Commutative Supersingular Isogeny Diffie-Hellman (CSIDH) is an isogeny-based key exchange protocol.To secure CSIDH against side-channel attacks, constant-time implementations with additional dummy isogeny computations are employed.
 
@@ -14,7 +14,7 @@ The concept of real-then-dummy CSIDH involves adding dummy isogeny operations to
 
 The conecpt of dynamic random vector CSIDH is using the random vector to control the order of real and dummy isogeny operation. This make the attacker cannot recover the private key with binary search.The concept of dynamic random vector constant-time CSIDH is based on the paper "(Short Paper) Analysis of a Strong Fault Attack on Static/Ephemeral CSIDH"(https://link.springer.com/chapter/10.1007/978-3-030-85987-9_12).
 
-###How to do the fault injection attack on constant time CSIDH?
+### How to do the fault injection attack on constant time CSIDH?
 
 For real-then-dummy CSIDH, the order of real and dummy isogeny operation of each degree is same. Moreover, the number of real isogeny operation is decided by private key value, e.g. if the max value of degree-359 is 5 and private key value of it is 3, then the order of isogeny operation will be real-real-real-dummy-dummy. 
 Obviously, we can use the binary search to locate the last real isogeny operation to recover the private key value.
@@ -44,10 +44,10 @@ Table 5 is the result with processing "4-binary_search_recover_key.py", which is
 
 Table 6 is the result with processing "5-recover_key_of_random_vector.py", which is the result of recover private key of dynamic random vector CSIDH.
 
-##License
+## License
 The code is released under GNU GPL v3.
 
-##Citation
+## Citation
 ```
 @inproceedings{chiu2024practical,
   title={Practical Fault Injection Attacks on Constant Time CSIDH and Mitigation Techniques},
@@ -56,6 +56,6 @@ The code is released under GNU GPL v3.
   year={2024}
 }
 ```
-##Disclaimer
+## Disclaimer
 
 This open source project is for proof of concept purposes only and should not be used in production environments. The code has not been officially vetted for security vulnerabilities and provides no guarantees of correctness or security. Users should carefully review the code and conduct their own security assessments before using the software.
